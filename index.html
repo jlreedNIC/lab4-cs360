@@ -27,7 +27,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
             </li>
-        </ul>
+        </ul>    
 
         <!-- Gallery -->
         <div class="container-fluid">
@@ -37,12 +37,16 @@
                         src="images/boat_calm_water.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="boat on calm water"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/boat_calm_water.webp"
                     />
                 
                     <img
                         src="images/mountain1.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="a mountain"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/mountain1.webp"
                     />
                 </div>
             
@@ -51,12 +55,16 @@
                         src="images/mountain2.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="another mountain"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/mountain2.webp"
                     />
                 
                     <img
                         src="images/waves_at_sea.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="waves at sea"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/waves_at_sea.webp"
                     />
                 </div>
             
@@ -65,6 +73,8 @@
                         src="images/boat_calm_water.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="boat again"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/boat_calm_water.webp"
                         
                     />
                 
@@ -72,48 +82,53 @@
                         src="images/mountain3.webp"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="more mountains??"
+                        data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-bs-source="images/mountain3.webp"
                     />
                 </div>
             </div>
         </div>
-        <!-- Gallery -->
-
-        <!-- <div class="container-fluid">
-            <div class="row" style="background-color:rgb(129, 127, 255); min-height: 50px">
-                <div class="col-md-9" style="background-color:rgb(43, 122, 226); min-height:50px; border: 5px solid black;">
-                    <img src="images/REED47.JPG" alt="family picture" height="360">
-                </div>
-
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:50px; border: 5px solid black;">
-                    <img src="images/REED53.JPG" alt="family picture" height="360">
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row" style="background-color:rgb(129, 127, 255); height: 300px">
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row" style="background-color:rgb(129, 127, 255); height: 300px">
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-
-                <div class="col-md-3" style="background-color:rgb(43, 122, 226); min-height:100px; border: 5px solid white;">
-                </div>
-            </div>
-        </div> -->
     </body>
 </html>
+
+<!-- modals -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background-color: black">
+            <!-- Modal Header -->
+            <div class="modal-header" style="border:black">
+                <h4 class="modal-title" style="color:white">Picture</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: white"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <img
+                    src=""
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="boat on calm water"
+                />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="border:black">
+                <button type="button" class="btn btn-dark">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script to change the picture source in the modal depending on what picture clicked. -->
+<script>
+    var exampleModal = document.getElementById('myModal')
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    var img_src = button.getAttribute('data-bs-source')
+
+    // Update the modal's content.
+    var image = exampleModal.querySelector('.modal-body img')
+    image.src = img_src
+})
+</script>
